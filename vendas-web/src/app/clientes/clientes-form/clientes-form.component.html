@@ -5,27 +5,28 @@
 
 <div class="container">
   <form>
+    {{ cliente.nome }} - {{ cliente.cpf }}
     <div class="row">
       <div class="col-md-6">
         <label for="id">ID</label>
-        <input disabled type="text" class="form-control">
+        <input [ngModel]="cliente.id" name="id" disabled type="text" class="form-control">
       </div>
       <div class="col-md-6">
         <label for="id">Data Cadastro</label>
-        <input disabled type="text" class="form-control">
+        <input [ngModel]="cliente.dataCadastro" name="dataCadastro" disabled type="text" class="form-control">
       </div>
     </div>
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
           <label for="id">Nome</label>
-          <input type="text" class="form-control">
+          <input [(ngModel)]="cliente.nome" name="nome" type="text" class="form-control">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <label for="id">CPF</label>
-          <input type="text" class="form-control">
+          <input [(ngModel)]="cliente.cpf" name="cpf" type="text" class="form-control">
         </div>
       </div>
     </div>

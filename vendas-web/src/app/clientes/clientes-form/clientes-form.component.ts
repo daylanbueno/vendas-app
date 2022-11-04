@@ -10,7 +10,12 @@ export class ClientesFormComponent implements OnInit {
 
   cliente: Cliente
 
-  constructor() { }
+
+  constructor() {
+    this.cliente = new Cliente()
+    this.cliente.id = '12'
+    this.cliente.dataCadastro = 'ate'
+  }
 
   ngOnInit(): void {
   }
