@@ -1,6 +1,7 @@
 import { ClienteService } from './../../cliente.service';
 import { Cliente } from './../Cliente';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clientes-form',
@@ -9,15 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientesFormComponent implements OnInit {
 
-  cliente: Cliente
-  success: boolean
-  errors: string[]
+  private cliente: Cliente
+  private success: boolean
+  private errors: string[]
 
-  constructor(private clienteService: ClienteService) {
+  constructor(
+    private clienteService: ClienteService,
+    private router :Router
+    ) {
     this.cliente = new Cliente()
   }
 
   ngOnInit(): void {
+  }
+
+  irParaFormularioListagem():void {
+    this.router.navigate(['clientes-list'])
   }
 
   onSubmit() {

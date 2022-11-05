@@ -42,8 +42,17 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-2">
-        <button  class="btn btn-success">Salvar</button>
+      <div class="col-md-4">
+        <button  class="btn btn-success">
+          <i class="fa fa-save"></i>
+          Salvar
+        </button>
+        <button type="button"
+                (click)="irParaFormularioListagem()"
+                class="btn btn-danger ml-1">
+          <i class="fa fa-thin fa-arrow-left"></i>
+          Ver clientes
+        </button>
       </div>
     </div>
   </form>
