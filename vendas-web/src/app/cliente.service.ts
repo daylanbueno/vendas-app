@@ -14,4 +14,8 @@ export class ClienteService {
     return this.httpService.post<Cliente>('http://localhost:8181/api/clientes', cliente)
   }
 
+  recuperarTodosClientes():Observable<Cliente[]> {
+    return this.httpService.get<Cliente[]>('http://localhost:8181/api/clientes')
+  }
+
 }
