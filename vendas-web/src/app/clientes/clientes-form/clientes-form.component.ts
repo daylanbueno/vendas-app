@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
 })
 export class ClientesFormComponent implements OnInit {
 
-  private cliente: Cliente
-  private success: boolean
-  private errors: string[]
+  cliente: Cliente
+  success: boolean
+  errors: string[]
 
   constructor(
     private clienteService: ClienteService,

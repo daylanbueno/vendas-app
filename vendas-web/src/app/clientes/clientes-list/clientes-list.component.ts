@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ClienteService } from './../../cliente.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,11 +14,16 @@ export class ClientesListComponent implements OnInit {
   clientes: Cliente[]
 
   constructor(
-    private clienteService: ClienteService
+    private clienteService: ClienteService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.recuperarTodosClientes()
+  }
+
+  irParaFormularioCadastro(): void {
+    this.router.navigate(['clientes-form'])
   }
 
 
