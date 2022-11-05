@@ -4,9 +4,20 @@
 </ol>
 
 <div class="container">
-  <form>
-    {{ cliente.nome }} - {{ cliente.cpf }}
+  <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
+
     <div class="row">
+      <div class="col-md-12">
+        <div *ngIf="success" class="alert alert-success"  role="alert">
+          Operação efetuada com sucesso!
+        </div>
+        <div *ngFor="let error of errors" class="alert alert-danger"  role="alert">
+          {{ error }}
+        </div>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="cliente.id">
       <div class="col-md-6">
         <label for="id">ID</label>
         <input [ngModel]="cliente.id" name="id" disabled type="text" class="form-control">
@@ -32,7 +43,7 @@
     </div>
     <div class="row">
       <div class="col-md-2">
-        <button class="btn btn-success">Salvar</button>
+        <button  class="btn btn-success">Salvar</button>
       </div>
     </div>
   </form>

@@ -1,5 +1,7 @@
+import { ClienteService } from './cliente.service';
 import { ClientesModule } from './clientes/clientes.module';
 import { NgModule } from '@angular/core';
+import { HttpClientModule  } from '@angular/common/http'
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -16,11 +18,14 @@ import { HomeComponent } from './home/home.component'
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     TemplateModule,
     ClientesModule
   ],
-  providers: [],
+  providers: [
+    ClienteService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
