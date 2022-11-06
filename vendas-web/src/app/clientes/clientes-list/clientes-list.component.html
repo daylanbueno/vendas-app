@@ -4,6 +4,18 @@
 </ol>
 
 <div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngIf="messageSuccess" class="alert alert-success"  role="alert">
+        {{ messageSuccess }}
+      </div>
+      <div *ngIf="messageError" class="alert alert-danger"  role="alert">
+        {{ messageError }}
+      </div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-md-2">
       <button (click)="irParaFormularioCadastro()" class="btn btn-warning">
@@ -33,11 +45,36 @@
           <td>
             <button class="btn btn-primary"
                     routerLink="/clientes-form/{{ cliente.id }}">
-              <i class="fa fa-edit"></i>
+                    <i class="fa fa-edit"></i>
+            </button>
+            <button class="btn btn-danger ml-1"
+                    (click)="handleSelecionarCliente(cliente)"
+                    data-toggle="modal" data-target="#modalDelecao">
+                    <i class="fa fa-trash"></i>
             </button>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
+
+  <div id="modalDelecao" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4>Confirmação</h4>
+        </div>
+        <div class="modal-body" *ngIf="clienteSelecionado">
+          Desejá realmente apagar {{ clienteSelecionado.nome }} ?
+        </div>
+        <div class="modal-footer">
+          <button (click)="handleDeleteClientePorId()"
+                  data-dismiss="modal"
+                  class="btn btn-success">Confirmar</button>
+          <button data-dismiss="modal" class="btn btn-default">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

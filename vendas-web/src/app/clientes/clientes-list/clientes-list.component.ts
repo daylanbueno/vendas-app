@@ -12,6 +12,9 @@ import { Cliente } from './../Cliente';
 export class ClientesListComponent implements OnInit {
 
   clientes: Cliente[]
+  clienteSelecionado: Cliente
+  messageSuccess: string
+  messageError: string
 
   constructor(
     private clienteService: ClienteService,
@@ -33,5 +36,19 @@ export class ClientesListComponent implements OnInit {
     })
   }
 
+  handleSelecionarCliente(cliente:Cliente):void {
+    this.clienteSelecionado = cliente
+  }
+
+  handleDeleteClientePorId() {
+    this.clienteService
+        .deletarClientePorId(this.clienteSelecionado.id)
+        .subscribe(() => {
+          this.messageSuccess = "Operação realizada com sucesso!"
+          this.recuperarTodosClientes()
+        },() => {
+          this.messageError = "Ocorreu um erro ao tentar apagar o registro!"
+        })
+  }
 
 }

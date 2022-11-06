@@ -23,7 +23,10 @@ export class ClienteService {
   }
 
   atualizar(cliente:Cliente):Observable<Cliente> {
-    console.log(cliente)
     return this.httpService.put<Cliente>(`http://localhost:8181/api/clientes/${cliente.id}`, cliente)
+  }
+
+  deletarClientePorId(id: number):Observable<any> {
+    return this.httpService.delete<any>(`http://localhost:8181/api/clientes/${id}`)
   }
 }
