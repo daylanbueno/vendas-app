@@ -26,7 +26,6 @@ export class ClientesListComponent implements OnInit {
     this.router.navigate(['clientes-form'])
   }
 
-
   recuperarTodosClientes(): void {
     this.clienteService.recuperarTodosClientes()
     .subscribe(response => {

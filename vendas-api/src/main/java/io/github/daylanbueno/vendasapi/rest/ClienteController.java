@@ -46,7 +46,7 @@ public class ClienteController {
     }
 
     @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ResponseStatus(HttpStatus.OK)
     public Cliente atualizar(@PathVariable Integer id, @Valid @RequestBody  Cliente cliente) {
         return clienteRepository.findById(id)
                 .map(clienteAtual -> {

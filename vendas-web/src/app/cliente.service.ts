@@ -18,4 +18,12 @@ export class ClienteService {
     return this.httpService.get<Cliente[]>('http://localhost:8181/api/clientes')
   }
 
+  obterClientePorId(id:number):Observable<Cliente> {
+    return this.httpService.get<Cliente>(`http://localhost:8181/api/clientes/${id}`)
+  }
+
+  atualizar(cliente:Cliente):Observable<Cliente> {
+    console.log(cliente)
+    return this.httpService.put<Cliente>(`http://localhost:8181/api/clientes/${cliente.id}`, cliente)
+  }
 }
