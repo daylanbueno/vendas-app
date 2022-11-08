@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { Cliente } from './clientes/Cliente';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -8,25 +9,27 @@ import { Observable } from 'rxjs';
 })
 export class ClienteService {
 
+  apiUrl: string = environment.urlBase
+
   constructor(private httpService: HttpClient) {}
 
   salvar(cliente:Cliente):Observable<Cliente> {
-    return this.httpService.post<Cliente>('http://localhost:8181/api/clientes', cliente)
+    return this.httpService.post<Cliente>(`${this.apiUrl}/api/clientes`, cliente)
   }
 
   recuperarTodosClientes():Observable<Cliente[]> {
-    return this.httpService.get<Cliente[]>('http://localhost:8181/api/clientes')
+    return this.httpService.get<Cliente[]>(`${this.apiUrl}/api/clientes`)
   }
 
   obterClientePorId(id:number):Observable<Cliente> {
-    return this.httpService.get<Cliente>(`http://localhost:8181/api/clientes/${id}`)
+    return this.httpService.get<Cliente>(`${this.apiUrl}/api/clientes/${id}`)
   }
 
   atualizar(cliente:Cliente):Observable<Cliente> {
-    return this.httpService.put<Cliente>(`http://localhost:8181/api/clientes/${cliente.id}`, cliente)
+    return this.httpService.put<Cliente>(`${this.apiUrl}/api/clientes/${cliente.id}`, cliente)
   }
 
   deletarClientePorId(id: number):Observable<any> {
-    return this.httpService.delete<any>(`http://localhost:8181/api/clientes/${id}`)
+    return this.httpService.delete<any>(`${this.apiUrl}/api/clientes/${id}`)
   }
 }
