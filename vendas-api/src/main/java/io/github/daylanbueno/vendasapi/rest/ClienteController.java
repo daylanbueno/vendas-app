@@ -13,7 +13,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/clientes")
 @RequiredArgsConstructor
-@CrossOrigin("*")
 public class ClienteController {
 
     private final ClienteRepository clienteRepository;

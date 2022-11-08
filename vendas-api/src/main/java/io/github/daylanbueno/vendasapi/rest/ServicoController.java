@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -18,7 +19,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/servicos")
 @RequiredArgsConstructor
-@CrossOrigin("*")
 public class ServicoController {
 
     private final ClienteRepository clienteRepository;
@@ -28,7 +28,7 @@ public class ServicoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Servico salvar(@RequestBody ServicoDto servicoDto) {
+    public Servico salvar(@RequestBody @Valid ServicoDto servicoDto) {
         LocalDate data = LocalDate.parse(servicoDto.getData(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
         Cliente cliente = clienteRepository

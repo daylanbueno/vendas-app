@@ -1,3 +1,4 @@
+import { ServicoPrestadoService } from './servico-prestado.service';
 import { ServicoPrestadoModule } from './servico-prestado/servico-prestado.module';
 import { ClienteService } from './cliente.service';
 import { ClientesModule } from './clientes/clientes.module';
@@ -26,7 +27,8 @@ import { HomeComponent } from './home/home.component';
     ServicoPrestadoModule
   ],
   providers: [
-    ClienteService
+    ClienteService,
+    ServicoPrestadoService
   ],
   bootstrap: [AppComponent]
 })
