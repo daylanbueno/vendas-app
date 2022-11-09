@@ -1,3 +1,4 @@
+import { ServicoPrestadoListComponent } from '../servico-prestado/servico-prestado-list/servico-prestado-list.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,7 +8,7 @@ import { ServicoPrestadoComponent } from './servico-prestado/servico-prestado.co
 
 
 @NgModule({
-  declarations: [ServicoPrestadoComponent],
+  declarations: [ServicoPrestadoComponent, ServicoPrestadoListComponent],
   imports: [
     CommonModule,
     ServicoPrestadoRoutingModule,
@@ -15,7 +16,8 @@ import { ServicoPrestadoComponent } from './servico-prestado/servico-prestado.co
   ], exports: [
     CommonModule,
     ServicoPrestadoRoutingModule,
-    ServicoPrestadoComponent
+    ServicoPrestadoComponent,
+    ServicoPrestadoListComponent
   ]
 })
 export class ServicoPrestadoModule { }

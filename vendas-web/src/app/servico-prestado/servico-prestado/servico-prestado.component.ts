@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ServicoPrestadoService } from './../../servico-prestado.service';
 import { Servico } from './../../clientes/Servico';
 import { ClienteService } from './../../cliente.service';
@@ -17,13 +18,18 @@ export class ServicoPrestadoComponent implements OnInit {
 
   constructor(
     private clienteServico: ClienteService,
-    private servicoPrestado: ServicoPrestadoService
+    private servicoPrestado: ServicoPrestadoService,
+    private router: Router
   ) {
     this.servico = new Servico()
   }
 
   ngOnInit(): void {
     this.recuperarClientes()
+  }
+
+  irParaCadastro(): void {
+    this.router.navigate(['servicos-listagem'])
   }
 
   recuperarClientes():void {
@@ -46,4 +52,6 @@ export class ServicoPrestadoComponent implements OnInit {
           this.errors = responseError.error.messages;
         })
   }
+
+
 }

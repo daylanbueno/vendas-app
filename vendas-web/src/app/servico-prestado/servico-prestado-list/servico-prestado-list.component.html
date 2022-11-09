@@ -1,0 +1,61 @@
+<h1 class="mt-4">Clientes</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Consulta</li>
+</ol>
+
+<div class="container">
+  <form #formConsulta="ngForm" (ngSubmit)="consultar()">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Nome</label>
+          <input [(ngModel)]="nome" name="nome"  type="text" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Mes</label>
+          <select [(ngModel)]="mes" name="mes" id="mes" class="form-control">
+            <option value="">selecionar</option>
+            <option *ngFor="let mes of meses" [value]="mes">{{ mes }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary" type="submit">
+          <i class="fa fa-search"></i>
+          Consultar
+        </button>
+        <button (click)="irParaFormularioCadastro()" class="btn btn-warning ml-2">
+          <i class="fa fa-plus"></i>
+          Novo
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="row mb-2">
+    <div *ngIf="message" class="alert alert-warning mt-2"  role="alert">
+      {{ message }}
+    </div>
+    <div class="col-md-12 mt-2">
+      <table class="table">
+        <thead>
+          <th>Cliente</th>
+          <th>Descrição</th>
+          <th>Preço</th>
+          <th>Data</th>
+        </thead>
+        <tbody *ngFor="let serv of servicos">
+            <td>{{ serv.cliente.nome }}</td>
+            <td>{{ serv.descricao }}</td>
+            <td>{{ serv.valor }}</td>
+            <td>{{ serv.data }}</td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+

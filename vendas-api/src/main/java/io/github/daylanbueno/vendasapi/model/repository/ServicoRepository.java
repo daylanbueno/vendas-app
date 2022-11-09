@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ServicoRepository extends JpaRepository<Servico, Integer> {
 
-    @Query("select s from Servico s inner join s.cliente c where  upper(c.nome) like %:nome% and MONTH(s.data) = :mes ")
+    @Query("select s from Servico s inner join s.cliente c where  upper(c.nome) like upper(:nome) and MONTH(s.data) = :mes ")
     List<Servico> recuperarPorFiltroNomeEMes(String nome, Integer mes);
 }
 

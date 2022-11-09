@@ -48,7 +48,7 @@ public class ServicoController {
     public List<Servico> recuperarPorFiltro(
             @RequestParam(value = "nome", required = false, defaultValue = "") String nome,
             @RequestParam(value = "mes", required = false) Integer mes ) {
-        return servicoRepository.recuperarPorFiltroNomeEMes(nome, mes);
+        return servicoRepository.recuperarPorFiltroNomeEMes("%"+nome+"%", mes);
     }
 
 }
