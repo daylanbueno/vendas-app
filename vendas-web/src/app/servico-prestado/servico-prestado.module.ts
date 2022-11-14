@@ -15,7 +15,6 @@ import { ServicoPrestadoComponent } from './servico-prestado/servico-prestado.co
     FormsModule
   ], exports: [
     CommonModule,
-    ServicoPrestadoRoutingModule,
     ServicoPrestadoComponent,
     ServicoPrestadoListComponent
   ]

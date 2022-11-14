@@ -27,9 +27,8 @@ export class ServicoPrestadoListComponent implements OnInit {
   }
 
   irParaFormularioCadastro():void {
-    this.router.navigate(['servicos-form'])
+    this.router.navigate(['servicos/cadastro'])
   }
-
 
   consultar():void {
     this.servicoPrestado
