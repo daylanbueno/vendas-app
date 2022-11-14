@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: 'servicos-form', component: ServicoPrestadoComponent },
+  { path: 'servicos/cadastro', component: ServicoPrestadoComponent },
   { path: 'servicos-listagem', component: ServicoPrestadoListComponent },
 ];
 
