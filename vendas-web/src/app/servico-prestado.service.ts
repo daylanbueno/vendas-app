@@ -1,4 +1,4 @@
-import { ServicoPrestado } from './servico-prestado/servico-prestado-list/ServicoPrestado';
+import { ServicoPrestado } from './servico-prestado/ServicoPrestado';
 import { Observable } from 'rxjs';
 import { Servico } from './clientes/Servico';
 import { environment } from './../environments/environment';

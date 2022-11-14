@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ServicoPrestadoService } from 'src/app/servico-prestado.service';
-import { ServicoPrestado } from './ServicoPrestado';
+import { ServicoPrestado } from '../ServicoPrestado';
 
 @Component({
   selector: 'app-servico-prestado-list',
