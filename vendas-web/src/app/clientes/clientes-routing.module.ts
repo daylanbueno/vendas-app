@@ -7,10 +7,9 @@ import { ClientesFormComponent } from './clientes-form/clientes-form.component';
 
 const routes: Routes = [
   { path: 'clientes', component: LayoutComponent, children: [
-    { path: '', redirectTo: 'clientes/listagem', pathMatch: 'full' },
-    { path: 'form', component: ClientesFormComponent },
-    { path: 'form/:id', component: ClientesFormComponent },
-    { path: 'listagem', component: ClientesListComponent },
+    { path: '', component: ClientesListComponent },
+    { path: 'cadastro', component: ClientesFormComponent },
+    { path: 'cadastro/:id', component: ClientesFormComponent },
   ]}
 
 ];

@@ -29,7 +29,7 @@ export class ServicoPrestadoComponent implements OnInit {
   }
 
   irParaCadastro(): void {
-    this.router.navigate(['servicos-listagem'])
+    this.router.navigate(['servicos'])
   }
 
   recuperarClientes():void {
