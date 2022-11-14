@@ -39,7 +39,7 @@ export class ClientesFormComponent implements OnInit {
   }
 
   irParaFormularioListagem():void {
-    this.router.navigate(['clientes-list'])
+    this.router.navigate(['clientes/listagem'])
   }
 
   onSubmit() {

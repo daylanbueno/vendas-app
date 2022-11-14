@@ -26,7 +26,7 @@ export class ClientesListComponent implements OnInit {
   }
 
   irParaFormularioCadastro(): void {
-    this.router.navigate(['clientes-form'])
+    this.router.navigate(['clientes/form'])
   }
 
   recuperarTodosClientes(): void {
