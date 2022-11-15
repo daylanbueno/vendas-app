@@ -23,7 +23,7 @@ export class LoginComponent {
     this.authService
         .efetuarLogin(this.username, this.password)
         .subscribe(response => {
-            console.log('token', response)
+            localStorage.setItem('access_token',JSON.stringify(response))
             this.route.navigate(['/'])
         }, errorResponse => {
           this.errors  = ['Usuário ou senha invalido']
