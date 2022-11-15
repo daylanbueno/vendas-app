@@ -1,4 +1,4 @@
-<div id="layoutAuthentication">
+<div class="bg-primary" id="layoutAuthentication">
   <div id="layoutAuthentication_content">
       <main>
           <div class="container">
@@ -11,9 +11,12 @@
                         </h3>
                     </div>
                     <div class="card-body">
-                      <div  class="alert alert-danger" *ngIf="errorCadastro">
-                         Login e/ou senha incorreto().
+                      <div  class="alert alert-danger" *ngFor="let error of errors">
+                         {{ error }}
                       </div>
+                      <div  class="alert alert-success" *ngIf="sucessoCadastro">
+                         Operação efetuada com sucesso.
+                     </div>
                       <form #loginForm="ngForm" (submit)="onSubmit()">
                         <div class="form-group">
                           <label for="" class="small mb-1">Login</label>
@@ -32,7 +35,8 @@
                             Enviar
                           </button>
 
-                          <button  type="button" class="btn btn-success" *ngIf="seCadastrando">
+                          <button (click)="cadastrar()" class="btn btn-success"
+                                  type="button" *ngIf="seCadastrando">
                             Cadastrar
                           </button>
 

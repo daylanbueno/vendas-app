@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { ServicoPrestadoService } from './servico-prestado.service';
 import { ServicoPrestadoModule } from './servico-prestado/servico-prestado.module';
 import { ClienteService } from './cliente.service';
@@ -34,7 +35,8 @@ import { LayoutComponent } from './layout/layout.component';
   ],
   providers: [
     ClienteService,
-    ServicoPrestadoService
+    ServicoPrestadoService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
