@@ -14,6 +14,7 @@ export class LoginComponent {
   seCadastrando:boolean = false
   sucessoCadastro: boolean = false
   errors: string []
+
   constructor(
     private authService: AuthService,
     private route: Router
