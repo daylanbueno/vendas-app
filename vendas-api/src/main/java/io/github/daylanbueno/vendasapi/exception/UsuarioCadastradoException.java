@@ -1,6 +1,6 @@
-package io.github.daylanbueno.vendasapi;
+package io.github.daylanbueno.vendasapi.exception;
 
-public class UsuarioCadastradoException extends Exception {
+public class UsuarioCadastradoException extends RuntimeException {
     public UsuarioCadastradoException(String username) {
         super("Usuario já existe "+username);
     }
